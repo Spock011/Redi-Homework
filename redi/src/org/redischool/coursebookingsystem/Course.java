@@ -20,13 +20,25 @@ class Course {
     }
 
     boolean book(Student student) {
-        // Please complete the body of method book!
+        if (openSpaces > 0) {
+          Integer freeSpace = isThereSpace(student);
+          if (freeSpace != null) {
+            studentList[freeSpace] = student;
+            openSpaces--;
+            return true;
+          }
+        }
         return false;
+       
     }
 
     String createParticipantList(){
         String participantList="";
-        // Please complete the body of method createParticipantList!
+          for (int i = 0; i < studentList.length; i++) {
+              if(studentList[i]!=null){
+                  participantList = participantList + studentList[i].name +"\n";
+              }
+          }   
         return participantList;
     }
 }
