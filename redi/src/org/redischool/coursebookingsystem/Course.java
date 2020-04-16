@@ -31,6 +31,20 @@ class Course {
         return false;
        
     }
+    
+    private Integer isThereSpace(Student newComming) {
+      for (int i = 0; i < studentList.length; i++) {
+        Student alreadyThere = studentList[i];
+        if (alreadyThere != null) {
+          if (alreadyThere.name.equals(newComming.name)) {
+            return null;
+          }
+        } else {
+          return i;
+        }
+      }
+      return null;
+    }
 
     String createParticipantList(){
         String participantList="";
