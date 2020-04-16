@@ -1,1 +1,1 @@
-# << Please Write your name here >>
+Repository for class homework
